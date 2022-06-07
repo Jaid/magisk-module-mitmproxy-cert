@@ -1,0 +1,6 @@
+id=mitmproxy-cert
+name=mitmproxy CA cert installer
+version=v1.0
+versionCode=1
+author=Jaid
+description=Installs mitmproxy certitificates in system folder and fully trusts it, so you don’t have to do anything manually.
