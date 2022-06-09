@@ -18,15 +18,17 @@ function retry() {
     declare fullSleep=${sleepTimes[$i]}
     echo -n -e "${red}Code $?, retrying in ${sleepTimes[$i]} seconds$noColor"
     # thirdSleep=$((${fullSleep} / 3)) # Only in zsh
-    declare thirdSleep=$(node -pe "${fullSleep}/3")
-    sleep $thirdSleep
+    declare thirdSleep
+    thirdSleep=$(node -pe "${fullSleep}/3")
+    sleep "$thirdSleep"
     echo -n -e "."
-    sleep $thirdSleep
+    sleep "$thirdSleep"
     echo -n -e "."
-    sleep $thirdSleep
+    sleep "$thirdSleep"
     echo -e "."
-    declare i=$(expr $i + 1)
-    if [ $i -eq "${#sleepTimes[@]}" ]; then
+    declare i
+    i=$(expr $i + 1)
+    if [ "$i" -eq "${#sleepTimes[@]}" ]; then
       echo -e "${red}Giving up!$noColor"
       break
     fi
