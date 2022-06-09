@@ -1,4 +1,6 @@
 #!/system/bin/sh
+set -e
+set -o errexit
 
 modDir=${0%/*}
-source $modDir/common.sh
+. "$modDir/lib/common.sh"
